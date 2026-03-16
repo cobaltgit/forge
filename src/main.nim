@@ -21,7 +21,7 @@ const
 let PKG_RE = re("^[a-zA-Z0-9][a-zA0-9._-]*$")
 
 
-if not checkCanExecute(): 
+if not checkCanExecute():
   programExit("Cannot execute: insufficient permissions or no operation specified.")
 
 let
@@ -47,10 +47,6 @@ proc validatePkgName(name: string): bool =
       return false
 
     return name.match(PKG_RE)
-
-let lockPath = TEMP_DIR / "forge.lock"
-
-
 
 proc install(name: string) =
     consoleInfo(fmt"Downloading source for {name}")
